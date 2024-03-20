@@ -62,7 +62,7 @@ You can tweak some Linode instance settings by updating [variables.tf](variables
 
 - label
 - region
-- instance_type - default is g6-dedicated-8 
+- instance_type. During testing, g6-dedicated-8 or g6-standard-8 worked best however, default is g6-standard-6. 
 
 **Important!** Don't set domain during initial set up. You need your server up and running before setting domain (see below, domain is optional).
 
@@ -72,9 +72,17 @@ Sensitive variables are set in the `secrets.tfvars` config.
 
 Run `terraform init` in the project directory. This command initializes Terraform, downloads the Linode provider, and prepares project for deployment.
 
+```bash
+terraform init
+```
+
 ### Apply Terraform Configuration
 
 Execute `terraform apply -var-file="secrets.tfvars"` to create the resources defined in the Terraform configuration. Terraform will prompt you to review the proposed changes and ask for confirmation before proceeding.
+
+```bash
+terraform apply -var-file="secrets.tfvars"
+```
 
 The process takes around 5-10 min.
 
@@ -95,7 +103,11 @@ To do so:
 
 After these steps server should obtain SSL certificate and start the nginx instance for domain.
 
-## 5. Troubleshooting
+## 5. Clean Up
+
+Once you are done using the application, you can delete your Linode instance (VM) to minimize costs. This action will remove the resources that were allocated for your application, thereby stopping any ongoing charges associated with them. You can always repeat step 3 above to deploy moviemind as needed. 
+
+## 6. Troubleshooting
 
 ### Server creation is stuck or server is created but offline
 
