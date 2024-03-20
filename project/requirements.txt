@@ -1,0 +1,13 @@
+huggingface_hub
+fastapi
+websockets
+uvicorn
+jinja2
+bs4
+llama-cpp-python
+psutil
+faiss-cpu
+langchain_community
+pyarrow
+pandas
+sentence-transformers

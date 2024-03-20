@@ -1,0 +1,380 @@
+html, body, body > header { height: 100%; margin: 0; padding: 0; }
+
+body {
+    background-color:#000000;
+    background-image: url('/static/img/netflix-bg.jpeg');
+    background-repeat: none;
+    background-position: center;
+    /* background-size:120% 120%; */
+    min-width: 350px;
+}
+
+hr {
+    margin-top: 20px;
+}
+
+
+#tempLabel {
+    display: none;
+}
+
+.token-count {
+    position: absolute;
+    bottom: 2px;
+    right: 26px;
+    color: #888;
+    font-size: 0.8em;
+    font-family: 'Inconsolata', monospace;
+}
+
+.response-token-count {
+    position: absolute;
+    bottom: 2px;
+    right: 26px;
+    color: #888;
+    font-size: 0.8em;
+    font-family: 'Inconsolata', monospace;
+}
+
+.input-box {
+    position: relative;
+}
+    .input-box #send {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        height: calc(100% - 10px);
+    }
+
+#top-box {
+    background-color:#000000;
+    color: white;
+    min-height: 150px; 
+    height: calc(100% - 100px);
+    position: relative;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+#logo {
+    color: #D32F27;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 20px 20px 0 30px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #222;
+}
+
+.tokenLimitExceeded {
+    color: #b41818 !important;
+    font-weight:bold;
+}
+
+#query-controls {
+    display: none;
+    margin: 15px 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.movies-wrapper {
+    width: calc(100% - 16px);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+#movies-container {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    white-space: nowrap;
+}
+    #movies-container .movie-card img {
+        width: 150px;
+        border-radius: 10px;
+    }
+.movie-details .movie-poster {
+    margin-bottom: 20px;
+}
+@media screen and (min-width: 460px) {
+    #tempLabel {
+        display: inline;
+    }
+    #tempValue {
+        display: inline-block !important;
+        min-width: 30px;
+    }
+}
+
+#tempSlider {
+    vertical-align: middle; 
+    width:150px
+}
+
+#tempValue {
+    display: none;
+}
+
+#messages {
+    padding-top: 20px;
+    padding-left:10px;
+    padding-right:10px;
+    max-height: 100%;
+}
+
+#messages p {
+    font-family: 'Inconsolata', monospace;
+}
+
+.card-body{
+    background-color:#222;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 500px;  
+}
+    .card-body a {
+        color: #189afd;
+    }
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media screen and (max-width: 375px) {    
+    #messages {
+        font-size: 16px;
+    }
+    #movies-container .movie-card img {
+        width: 125px;
+        border-radius: 8px;
+    }
+}    
+@media screen and (min-width: 576px) {    
+    .server-message {
+        margin-left: 10px !important;
+    }
+
+    .info-message {
+        margin-left: 10px !important;
+    }
+
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .card-body {
+        padding-bottom: 24px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        overflow: hidden;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+    }
+
+    #controls-box {
+        padding-bottom: 10px !important;
+        margin-right:15px;
+    }
+
+    .chat-body {
+        min-height: 400px; 
+        height: 100%; 
+        margin: 0 auto !important;
+    }
+
+    #top-box {
+        height: calc(100% - 100px);
+    }
+    
+    #messages {
+        padding-left:20px;
+        padding-right:20px;
+        margin-right: 0px;
+        font-size: 18px;
+    }
+
+    #chat-form {
+        margin-top: 1rem !important;
+        padding-right: 0px !important;
+    }   
+
+}
+
+@media screen and (max-width: 576px) {
+    .dyna-padding {
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    .card-body {
+        border-radius: 7px;
+        min-height: 500px;
+        padding-top: 2px;
+    }
+    #messages {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    body {
+        padding-top: 15px;
+        padding-bottom:15px;
+
+    }
+
+}
+
+@media screen and (min-width: 940px) {
+
+    body {
+        padding-top: 60px;
+        padding-bottom:60px;
+    }
+}
+
+
+#controls-box {
+    padding:0px; 
+    border-radius: 10px;
+}
+
+.chat-body {
+    max-width: 900px;
+    min-height: 400px; 
+    height: 100%; 
+    margin: 0 auto;
+}
+
+.server-message {
+    font-size: 1.3em !important;
+    float:left;
+    width: -webkit-fill-available;
+    border-radius: 6px;
+    padding-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#messageText {
+    font-size: 1.3em !important;
+    padding-right: 100px;
+    margin-bottom: 10px;
+    resize:none;
+    font-family: 'Inconsolata', monospace;
+}
+
+.info-message p {
+    margin-bottom: 0px;
+}
+
+.server-message p {
+    margin-bottom: 8px;
+}
+.client-message p {
+    margin-bottom: 8px;
+}
+
+#chat-form {
+    margin-top: 0.5rem;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.info-message {
+    clear: right;
+    background-color: #fff; /* #ebd7f5; */
+    border-radius: 6px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+
+.source {
+    margin-top:5px;
+    font-size: 0.8em;
+}
+
+#buttons {
+    margin: 20px 0 20px 20px;
+}
+    #buttons .clip-button {
+        margin-right: 20px;
+    }
+    #buttons .knowledge {
+        margin: 10px 0;
+        color: #666;
+    }
+        #buttons .knowledge a {
+            color: #666;
+        }
+@media screen and (min-width: 576px) {    
+    #buttons .knowledge {
+        width: 75%;
+    }
+}
+    
+#progress-bar-container {
+    display: none;
+    clear: both;
+    margin: 20px 30px;
+}
+    #progress-bar-container .progress {
+        height: 10px;
+    }
+
+    .white-svg {
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(156deg) brightness(102%) contrast(101%);
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+    50% { 
+        color: #0d6efd;
+     }
+}
+
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(99, 111, 117, 0.3);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(99, 111, 117);
+  }
+
+
+.movie-cast h2 {
+    margin: 30px 0 20px 0;
+}
+.cast-list {
+    row-gap: 20px;
+}
+    .cast-list .cast-member h4 {
+        margin: 10px 0 0 0;
+    }
+    .cast-list .cast-member p {
+        margin: 0;
+        color: #888;
+    }

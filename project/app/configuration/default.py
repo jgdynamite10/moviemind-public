@@ -1,0 +1,25 @@
+MODEL = "mistral-7b-openorca.Q4_K_M.gguf"
+
+# Stopwords for instruct and vicuna style prompts
+STOP_WORDS = ["USER:", "ASSISTANT:", "User:", "Assistant:", "user:", "assistant:", "[INST"]
+
+# Format: ["(autcomplete prefix)","(promt template)", (cursor position inside prompt for user input)]
+PROMPT_TEMPLATES = [
+    ["vic",   "You are a helpful AI assistant.\\n\\nUSER: \\n\\nASSISTANT:", 39],
+    ["##",    "\\n\\n### RESPONSE:", 0],
+    ["story", "You are a storyteller. Your writing is vivid, exentive and very detailed. Extract the character traits from the user's input but don't name them in your story directly. Instead weave them into the story.\\n\\nUSER: Write a story about \\n\\nASSISTANT:",  231],
+    ["inst", "[INST]\\n<<SYS>>You are a helpfull, respectful and honest assistant<</SYS>>\\n\\n[/INST]\\n", 74],
+    ["movie", "[INST]\\n<<SYS>>You are a cinema expert. You recommend movies based on user input. Output recommendation summary (100 chars max) and 5 movies titles in an ordered list.<</SYS>>\\nUSER: \\n\\n[/INST]\\nASSISTANT:", 182]
+]
+
+# Main LLM generation params
+TEMPERATURE = 1
+TOP_P=0.6
+TOP_K=40
+REPETATION_PENALTY=1.176
+
+CONTEXT_TOKENS = 2048
+MAX_RESPONSE_TOKENS = 500
+
+# For a GTX 1660TI with 6GB RAM use 32 for 7B, or 16 for 13B Models
+GPU_LAYERS=0
