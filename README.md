@@ -62,7 +62,7 @@ You can tweak some Linode instance settings by updating [variables.tf](variables
 
 - label
 - region
-- instance_type. During testing, g6-dedicated-8 or g6-standard-8 worked best however, default is g6-standard-6. 
+- instance_type. During testing, g6-dedicated-8, g6-standard-8 or higher (cpu + mem) worked best however, default is g6-dedicated-8. 
 
 **Important!** Don't set domain during initial set up. You need your server up and running before setting domain (see below, domain is optional).
 
