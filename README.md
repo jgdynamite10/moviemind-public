@@ -2,6 +2,8 @@
 
 You can use this guide for quick Moviemind app deployment into your Linode account. It will automatically create a Linode instance, install all required software and deploy the app. Don't have an account? Try our cloud computing services for [free with a $100 credit](https://www.linode.com/lp/free-credit-100/?promo=sitelin100-02162023&promo_value=100&promo_length=60&utm_source=google&utm_medium=cpc&utm_campaign=11178784975_109179237083&utm_term=g_kwd-967903494911_e_linode%20free%20%24100&utm_content=466889956471&locationid=9027296&device=c_c&gad_source=1&gclid=CjwKCAjwkuqvBhAQEiwA65XxQMbIBaPEBdaciW7s4Z2quM830DVTReco9ivnVcd677iEz6VXkXiHzRoCFvwQAvD_BwE)
 
+**Note** Due to security reasons, your account may have a soft limit in place that prevents the launch of the minimum instance type required for this project (dedicated 16 GB or g6-dedicated-8). Please open a [support ticket](https://cloud.linode.com/support/tickets) to request the removal of this limit.  
+
 ## 1. Prepare Your Environment
 
 ### Install Terraform
@@ -62,7 +64,9 @@ You can tweak some Linode instance settings by updating [variables.tf](variables
 
 - label
 - region
-- instance_type. During testing, g6-dedicated-8, g6-standard-8 or higher (cpu + mem) worked best however, default is g6-dedicated-8. 
+- instance_type.
+
+**Note** During testing, g6-dedicated-8, g6-standard-8 or higher (cpu + mem) worked best however, default is g6-dedicated-8. 
 
 **Important!** Don't set domain during initial set up. You need your server up and running before setting domain (see below, domain is optional).
 
